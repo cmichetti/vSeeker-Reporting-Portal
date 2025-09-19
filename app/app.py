@@ -7,6 +7,11 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     value = item[1]
     return rx.el.li(
         rx.cond(
+            key == "company", # don't show the company name in the server results
+            rx.prevent_default(), # do nothing
+            rx.prevent_default(), # do nothing
+        ),
+        rx.cond(
             key == "ipaddress",
             rx.el.span("IP Address", class_name="font-normal"),
             rx.el.span(key, class_name="font-normal"),
