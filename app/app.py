@@ -14,7 +14,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 value == 1,
                 rx.el.div(
                     rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                    rx.el.span("- Windows is fully patched with Windows Updates.", class_name="font-normal"),
+                    rx.el.span(" - Windows is fully patched with Windows Updates.", class_name="font-normal"),
                 ),
                 rx.el.div(
                     rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
@@ -22,23 +22,49 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 ),
             ),
         ),
-        #": ",
-        #rx.cond(
-        #    key.contains("disabled") | key.contains("enabled"),
-        #    rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
-        #    value,
-        #),
-        #class_name=rx.cond(
-        #    key.contains("disabled") | key.contains("enabled"),
-        #    rx.cond(
-        #        value == "1",
-        #        "p-3 border-b bg-green-100",
-        #        rx.cond(
-        #            value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
-        #        ),
-        #    ),
-        #    "p-3 border-b bg-white",
-        #),
+        rx.cond(
+            key == "firewallstatus",
+            rx.cond(
+                value == 1,
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - The Windows Firewall is fully enabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - The Windows Firewall is not fully enabled.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "avinstalled",
+            rx.cond(
+                value == 1,
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - There is a Talix/Microsoft-recognized Anti-Virus installed.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - There is no Talix/Microsoft-recognized Anti-Virus installed.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "everyoneShares",
+            rx.cond(
+                value == 1,
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - There are no file shares with Everyone access granted.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - There are file shares with Everyone access granted.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+
     ),
 
     
