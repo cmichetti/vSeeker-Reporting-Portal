@@ -6,7 +6,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     key = item[0]
     value = item[1]
     return rx.el.li(
-        rx.el.span(key, class_name="font-semibold"),
+        rx.el.span(key, class_name="font-thin"),
         ": ",
         rx.cond(
             key.contains("disabled") | key.contains("enabled"),
@@ -115,7 +115,7 @@ def index() -> rx.Component:
                 class_name="flex flex-row space-x-4 mb-8",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
-            class_name="w-full flex flex-col items-center pt-4 px-4",
+            class_name="w-full flex flex-col items-center pt-10 px-4",
         ),
         class_name="font-['Inter'] bg-gray-50 min-h-screen",
     )
