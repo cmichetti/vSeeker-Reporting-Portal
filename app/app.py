@@ -12,8 +12,8 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             key == "windowsfullypatched",
             rx.cond(
                 value == 1,
-                rx.el.span("√ - Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100"),
-                rx.el.span("! - Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100"),
+                rx.el.span("√ - Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100 bg-cover"),
+                rx.el.span("! - Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100 bg-cover"),
             )
         )
         #": ",
