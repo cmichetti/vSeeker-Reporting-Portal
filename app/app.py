@@ -25,7 +25,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
         rx.cond(
             key == "firewallstatus",
             rx.cond(
-                value == 1,
+                item[1] == 1,
                 rx.el.div(
                     rx.el.span("√", class_name="font-bold bg-none text-green-500"),
                     rx.el.span(" - The Windows Firewall is fully enabled.", class_name="font-normal"),
@@ -88,7 +88,7 @@ def scan_results_list() -> rx.Component:
                             rx.foreach(
                                 result.items(),
                                 lambda item: rx.cond(
-                                    (item[0] != "id") & (item[0] != "hostname") & (item[0] != "company"),
+                                    (item[0] != "id") & (item[0] != "hostname") & (item[0] != "company") & (item[0] != "ipaddress"),
                                     result_item_with_description(item),
                                     rx.fragment(),
                                 ),
