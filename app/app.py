@@ -6,7 +6,15 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     key = item[0]
     value = item[1]
     return rx.el.li(
-        rx.el.span(key, class_name="font-thin"),
+        rx.cond(
+            key.contains("ipaddress"),
+            key = "IP Address",
+        )
+        #if key == "ipaddress": 
+        #    desc = "IP Address"
+        #    rx.el.span(desc, class_name="font-normal")
+        #else:
+        rx.el.span(key, class_name="font-normal")  
         ": ",
         rx.cond(
             key.contains("disabled") | key.contains("enabled"),
