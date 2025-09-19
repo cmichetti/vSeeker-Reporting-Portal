@@ -5,54 +5,57 @@ from app.states.state import State
 def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     key = item[0]
     value = item[1]
-    return rx.cond(
-        key == "company", # don't show the company name in the server results
-        rx.fragment(), # if key == company, do nothing
-        rx.el.li(  # if key isn't == company, return data
-            rx.cond( # if key == ip address field, name it properly
-                key == "ipaddress",
-                rx.el.span("IP Address", class_name="font-normal"),
-                rx.fragment(),
-            ),
-            rx.cond( # if key == windowsfullypatched field, name it properly
-                key == "windowsfullypatched",
-                rx.el.span("Windows Update Status", class_name="font-normal"),
-                rx.fragment(),
-            ),
-            rx.cond( # if key == firewallstatus field, name it properly
-                key == "firewallstatus",
-                rx.el.span("Firewall Status", class_name="font-normal"),
-                rx.fragment(),
-            ),
-            rx.cond( # if key == avinstalled field, name it properly
-                key == "avinstalled",
-                rx.el.span("Anti-Virus Installed", class_name="font-normal"),
-                rx.fragment(),
-            ),
-            rx.cond( # if key == everyoneShares field, name it properly
-                key == "everyoneShares",
-                rx.el.span("Shares with Everyone Permissions", class_name="font-normal"),
-                rx.fragment(),
-            ),
-            ": ",
+  
+    return rx.el.li(  # if key isn't == company, return data
+        rx.cond( # if key == ip address field, name it properly
+            key == "ipaddress",
+            rx.el.span("IP Address", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        rx.cond( # if key == windowsfullypatched field, name it properly
+            key == "windowsfullypatched",
+            rx.el.span("Windows Update Status", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        rx.cond( # if key == firewallstatus field, name it properly
+            key == "firewallstatus",
+            rx.el.span("Firewall Status", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        rx.cond( # if key == avinstalled field, name it properly
+            key == "avinstalled",
+            rx.el.span("Anti-Virus Installed", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        rx.cond( # if key == everyoneShares field, name it properly
+            key == "everyoneShares",
+            rx.el.span("Shares with Everyone Permissions", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        rx.cond( # if key == DriveSpaceAll field, name it properly
+            key == "DriveSpaceAll",
+            rx.el.span("All drives over 10% free", class_name="font-normal"),
+            rx.fragment(),
+        ),
+        ": ",
+        rx.cond(
+            key.contains("disabled") | key.contains("enabled"),
+            rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
+            value,
+        ),
+        class_name=rx.cond(
+            key.contains("disabled") | key.contains("enabled"),
             rx.cond(
-                key.contains("disabled") | key.contains("enabled"),
-                rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
-                value,
-            ),
-            class_name=rx.cond(
-                key.contains("disabled") | key.contains("enabled"),
+                value == "1",
+                "p-3 border-b bg-green-100",
                 rx.cond(
-                    value == "1",
-                    "p-3 border-b bg-green-100",
-                    rx.cond(
-                        value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
-                    ),
+                    value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
                 ),
-                "p-3 border-b bg-white",
             ),
+            "p-3 border-b bg-white",
         ),
     ),
+
     
 
 def scan_results_list() -> rx.Component:
@@ -71,7 +74,7 @@ def scan_results_list() -> rx.Component:
                             rx.foreach(
                                 result.items(),
                                 lambda item: rx.cond(
-                                    (item[0] != "id") & (item[0] != "hostname"),
+                                    (item[0] != "id") & (item[0] != "hostname") & (item[0] != "company"),
                                     result_item_with_description(item),
                                     rx.fragment(),
                                 ),
