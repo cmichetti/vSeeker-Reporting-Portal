@@ -5,36 +5,35 @@ from app.states.state import State
 def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     key = item[0]
     value = item[1]
-    return rx.el.li(
-        rx.cond(
-            key == "company", # don't show the company name in the server results
-            rx.prevent_default(), # do nothing
-            rx.prevent_default(), # do nothing
-        ),
-        rx.cond(
-            key == "ipaddress",
-            rx.el.span("IP Address", class_name="font-normal"),
-            rx.el.span(key, class_name="font-normal"),
-        ),
-        ": ",
-        rx.cond(
-            key.contains("disabled") | key.contains("enabled"),
-            rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
-            value,
-        ),
-        class_name=rx.cond(
-            key.contains("disabled") | key.contains("enabled"),
-            rx.cond(
-                value == "1",
-                "p-3 border-b bg-green-100",
-                rx.cond(
-                    value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
-                ),
+    return rx.cond(
+        key == "company", # don't show the company name in the server results
+        rx.prevent_default(), # if key == company, do nothing
+        rx.el.li(  # if key isn't == company, return data
+            rx.cond( # if key == ip address field, name it properly
+                key == "ipaddress",
+                rx.el.span("IP Address", class_name="font-normal"),
+                rx.el.span(key, class_name="font-normal"),
             ),
-            "p-3 border-b bg-white",
+            ": ",
+            rx.cond(
+                key.contains("disabled") | key.contains("enabled"),
+                rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
+                value,
+            ),
+            class_name=rx.cond(
+                key.contains("disabled") | key.contains("enabled"),
+                rx.cond(
+                    value == "1",
+                    "p-3 border-b bg-green-100",
+                    rx.cond(
+                        value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
+                    ),
+                ),
+                "p-3 border-b bg-white",
+            ),
         ),
-    )
-
+    ),
+    
 
 def scan_results_list() -> rx.Component:
     return rx.el.div(
