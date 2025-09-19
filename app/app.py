@@ -115,7 +115,7 @@ def index() -> rx.Component:
                 class_name="flex flex-row space-x-4 mb-8",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
-            class_name="w-full flex flex-col items-center pt-10 px-4",
+            class_name="w-full flex flex-col items-center pt-8 px-4",
         ),
         class_name="font-['Inter'] bg-gray-50 min-h-screen",
     )
