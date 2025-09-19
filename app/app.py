@@ -12,27 +12,27 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             rx.cond( # if key == ip address field, name it properly
                 key == "ipaddress",
                 rx.el.span("IP Address", class_name="font-normal"),
-                rx.el.span(key, class_name="font-normal"),
+                rx.fragment(),
             ),
             rx.cond( # if key == windowsfullypatched field, name it properly
                 key == "windowsfullypatched",
                 rx.el.span("Windows Update Status", class_name="font-normal"),
-                rx.el.span(key, class_name="font-normal"),
+                rx.fragment(),
             ),
             rx.cond( # if key == firewallstatus field, name it properly
                 key == "firewallstatus",
                 rx.el.span("Firewall Status", class_name="font-normal"),
-                rx.el.span(key, class_name="font-normal"),
+                rx.fragment(),
             ),
             rx.cond( # if key == avinstalled field, name it properly
                 key == "avinstalled",
                 rx.el.span("Anti-Virus Installed", class_name="font-normal"),
-                rx.el.span(key, class_name="font-normal"),
+                rx.fragment(),
             ),
             rx.cond( # if key == everyoneShares field, name it properly
                 key == "everyoneShares",
                 rx.el.span("Shares with Everyone Permissions", class_name="font-normal"),
-                rx.el.span(key, class_name="font-normal"),
+                rx.fragment(),
             ),
             ": ",
             rx.cond(
