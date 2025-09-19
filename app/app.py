@@ -12,10 +12,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             key == "windowsfullypatched",
             rx.cond(
                 value == 1,
-                rx.el.span(rx.text.strong("√"), " - Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100 bg-cover"),
-                rx.el.span(rx.text.strong("!"), " - Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100 bg-cover"),
-            )
-        )
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span("- Windows is fully patched with Windows Updates.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - Windows is not fully patched with Windows Updates.", class_name="font-normal"),             
+                ),
+            ),
+        ),
         #": ",
         #rx.cond(
         #    key.contains("disabled") | key.contains("enabled"),
