@@ -11,7 +11,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
         rx.cond(
             key == "os",
             rx.cond(
-                value.contains("2012") | value.contains("2008") | value.contains(2003) | value.contains(2000),
+                value.contains("2012") | value.contains("2008") | value.contains("2003") | value.contains("2000"),
                 rx.el.div(
                     rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
                     rx.el.span(" - Operating System: ", class_name="font-normal"),
