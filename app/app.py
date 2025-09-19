@@ -50,7 +50,7 @@ def scan_results_list() -> rx.Component:
                             " (",
                             result["ipaddress"],
                             ")",
-                            class_name="text-xl font-bold text-gray-700",
+                            class_name="text-xl font-semibold text-gray-700",
                         ),
                         rx.el.ul(
                             rx.foreach(
@@ -61,7 +61,7 @@ def scan_results_list() -> rx.Component:
                                     rx.fragment(),
                                 ),
                             ),
-                            class_name="list-none p-0 mt-2 mb-4 border rounded-md overflow-hidden shadow-sm",
+                            class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
                         ),
                         class_name="mb-6",
                     ),
