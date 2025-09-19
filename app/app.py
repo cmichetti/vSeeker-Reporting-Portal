@@ -64,6 +64,119 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 ),
             ),
         ),
+        rx.cond(
+            key == "DriveSpaceAll",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - All drives have over 10% free space.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - There are some drives with less than 10% free space!", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "printspooler",
+            rx.cond(
+                value == "0",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - The Print Spooler service is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - The Print Spooler service is enabled and should be disabled if possible.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "smbv1Disabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - SMBv1 is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - SMBv1 is enabled and should be disabled, as it is a vulnerable file transfer protocol.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "netbiosDisabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - NetBIOS is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - NetBIOS is enabled and should be disabled, as it is an extremely vulnerable network protocol.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "lmhostsDisabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - LMHosts Lookup is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - LMHosts Lookup is enabled and should be disabled.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "tls10Disabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - TLS v1.0 is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - TLS v1.0 is enabled and should be disabled, as it is a vulnerable network protocol.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "tls11Disabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - TLS v1.1 is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - TLS v1.1 is enabled and should be disabled, as it is a vulnerable network protocol.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+        rx.cond(
+            key == "llmnrDisabled",
+            rx.cond(
+                value == "1",
+                rx.el.div(
+                    rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                    rx.el.span(" - LLMNR is disabled.", class_name="font-normal"),
+                ),
+                rx.el.div(
+                    rx.el.span("!", class_name="font-bold bg-none text-red-500"), 
+                    rx.el.span(" - LLMNR is enabled and should be disabled, as it is a vulnerable to man in the middle attacks.", class_name="font-normal"),             
+                ),
+            ),
+        ),
+
 
     ),
 
