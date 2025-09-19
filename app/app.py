@@ -8,11 +8,11 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
   
     return rx.el.li(  # if key isn't == company, return data
         # rx.el.span(key, class_name="font-normal"),
-        #rx.cond(
-        #    key == "os",
-        #    rx.el.span(key, class_name="font-normal"),
-        #    value != None,
-        #),       
+        rx.cond(
+            key == "os",
+            rx.el.span(value, class_name="font-normal"),
+            rx.fragment(),
+        ),
         rx.cond(
             key == "windowsfullypatched",
             rx.cond(
