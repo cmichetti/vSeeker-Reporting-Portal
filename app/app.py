@@ -10,7 +10,10 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
         # rx.el.span(key, class_name="font-normal"),
         rx.cond(
             key == "os",
-            rx.el.span(value, class_name="font-normal"),
+            rx.el.div(
+                rx.el.span("* - Operating System: ", class_name="font-normal"),
+                rx.el.span(value, class_name="font-semibold"),
+            ),
             rx.fragment(),
         ),
         rx.cond(
