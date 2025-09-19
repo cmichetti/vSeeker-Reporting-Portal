@@ -46,7 +46,8 @@ def scan_results_list() -> rx.Component:
                     State.scan_data.length() > 1,
                     rx.el.li(
                         rx.el.span(
-                            result["hostname - ipaddress"],
+                            result["hostname"],
+                            result["ipaddress"],
                             class_name="text-xl font-bold text-gray-700",
                         ),
                         rx.el.ul(
