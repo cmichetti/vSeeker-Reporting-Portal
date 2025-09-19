@@ -7,53 +7,29 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     value = item[1]
   
     return rx.el.li(  # if key isn't == company, return data
-        rx.cond( # if key == ip address field, name it properly
-            key == "ipaddress",
-            rx.el.span("IP Address", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        rx.cond( # if key == windowsfullypatched field, name it properly
-            key == "windowsfullypatched",
-            rx.el.span("Windows Update Status", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        rx.cond( # if key == firewallstatus field, name it properly
-            key == "firewallstatus",
-            rx.el.span("Firewall Status", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        rx.cond( # if key == avinstalled field, name it properly
-            key == "avinstalled",
-            rx.el.span("Anti-Virus Installed", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        rx.cond( # if key == everyoneShares field, name it properly
-            key == "everyoneShares",
-            rx.el.span("Shares with Everyone Permissions", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        rx.cond( # if key == DriveSpaceAll field, name it properly
-            key == "DriveSpaceAll",
-            rx.el.span("All drives over 10% free", class_name="font-normal"),
-            rx.fragment(),
-        ),
-        ": ",
+        # rx.el.span(key, class_name="font-normal"),
         rx.cond(
-            key.contains("disabled") | key.contains("enabled"),
-            rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
-            value,
-        ),
-        class_name=rx.cond(
-            key.contains("disabled") | key.contains("enabled"),
-            rx.cond(
-                value == "1",
-                "p-3 border-b bg-green-100",
-                rx.cond(
-                    value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
-                ),
-            ),
-            "p-3 border-b bg-white",
-        ),
+            key == "windowsfullypatched" & value == 1,
+            rx.el.span("√ - Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100"),
+            rx.el.span("! - Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100"),
+        )
+        #": ",
+        #rx.cond(
+        #    key.contains("disabled") | key.contains("enabled"),
+        #    rx.cond(value == "1", "Enabled", rx.cond(value == "0", "Disabled", value)),
+        #    value,
+        #),
+        #class_name=rx.cond(
+        #    key.contains("disabled") | key.contains("enabled"),
+        #    rx.cond(
+        #        value == "1",
+        #        "p-3 border-b bg-green-100",
+        #        rx.cond(
+        #            value == "0", "p-3 border-b bg-red-100", "p-3 border-b bg-white"
+        #        ),
+        #    ),
+        #    "p-3 border-b bg-white",
+        #),
     ),
 
     
