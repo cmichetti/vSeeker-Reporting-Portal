@@ -7,7 +7,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     value = item[1]
     return rx.cond(
         key == "company", # don't show the company name in the server results
-        rx.prevent_default(), # if key == company, do nothing
+        rx.empty(), # if key == company, do nothing
         rx.el.li(  # if key isn't == company, return data
             rx.cond( # if key == ip address field, name it properly
                 key == "ipaddress",
