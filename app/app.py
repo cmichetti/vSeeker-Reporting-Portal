@@ -12,8 +12,8 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             key == "windowsfullypatched",
             rx.cond(
                 value == 1,
-                rx.el.span(rx.text.strong("√"), "- Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100 bg-cover"),
-                rx.el.span(rx.text.strong("!"), "- Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100 bg-cover"),
+                rx.el.span(rx.text.strong("√"), " - Windows is fully patched with Windows Updates.", class_name="font-normal bg-green-100 bg-cover"),
+                rx.el.span(rx.text.strong("!"), " - Windows is not fully patched with Windows Updates.", class_name="font-normal bg-red-100 bg-cover"),
             )
         )
         #": ",
@@ -46,7 +46,7 @@ def scan_results_list() -> rx.Component:
                     State.scan_data.length() > 1,
                     rx.el.li(
                         rx.el.span(
-                            result["hostname"],
+                            result["hostname"," - ","ipaddress"],
                             class_name="text-xl font-bold text-gray-700",
                         ),
                         rx.el.ul(
