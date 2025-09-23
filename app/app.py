@@ -1,6 +1,6 @@
 import reflex as rx
 from app.states.state import State
-
+import re
 
 def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     key = item[0]
@@ -696,7 +696,7 @@ def scan_results_list() -> rx.Component:
                         rx.el.span(
                             result["hostname"],
                             " (",
-                            result["ipaddress"],
+                            result[re.match("^([^\s]*)\s.*$","ipaddress")],
                             ")",
                             class_name="text-xl font-semibold text-gray-700",
                         ),
