@@ -720,6 +720,10 @@ def scan_results_list() -> rx.Component:
                         rx.foreach(
                             result.items(),
                             lambda item: rx.cond(
+                                result["hostname"],
+                            " (",
+                            result["ipaddress"],
+                            ")",
                                 item[0] != "id",
                                 result_item_with_description(item),
                                 rx.fragment(),
