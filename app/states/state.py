@@ -20,7 +20,7 @@ class State(rx.State):
             if "=" in part:
                 key, value = part.split("=", 1)
                 conn_parts[key.strip()] = value.strip()
-        server = "cmichetti.database.windows.net"
+        server = "vseeker.database.windows.net"
         user = conn_parts.get("User ID") or conn_parts.get("user")
         password = conn_parts.get("Password") or conn_parts.get("password")
         database = conn_parts.get("Initial Catalog") or conn_parts.get("database")
