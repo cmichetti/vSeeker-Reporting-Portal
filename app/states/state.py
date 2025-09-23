@@ -14,20 +14,21 @@ class State(rx.State):
     scan_data: list[dict[str, str]] = []
 
     def _get_db_connection(self):
-        connection_string = os.environ["AZURE_SQL_CONNECTION_STRING"]
-        conn_parts = {}
-        for part in connection_string.split(";"):
-            if "=" in part:
-                key, value = part.split("=", 1)
-                conn_parts[key.strip()] = value.strip()
-        server_part = conn_parts.get("Server")
-        if server_part and server_part.startswith("tcp:"):
-            server_part = server_part[4:]
-        if server_part and "," in server_part:
-            server = server_part.split(",")[0]
-        else:
-            server = "vseeker.database.windows.net"
-        server_short_name = server.split(".")[0] if server else ""
+        #connection_string = os.environ["AZURE_SQL_CONNECTION_STRING"]
+        #conn_parts = {}
+        #for part in connection_string.split(";"):
+        #    if "=" in part:
+        #        key, value = part.split("=", 1)
+        #        conn_parts[key.strip()] = value.strip()
+        #server_part = conn_parts.get("Server")
+        #if server_part and server_part.startswith("tcp:"):
+        #    server_part = server_part[4:]
+        #if server_part and "," in server_part:
+        #    server = server_part.split(",")[0]
+        #else:
+        #    server = "vseeker.database.windows.net"
+        #server_short_name = server.split(".")[0] if server else ""
+        server = "vseeker.database.windows.net"
         user = "vseekerdb"
         password = "TalixNetworkAssessments!@#$%"
         database = "vseekerDB"
