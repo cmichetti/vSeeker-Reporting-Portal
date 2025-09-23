@@ -27,8 +27,9 @@ class State(rx.State):
             server = server_part.split(",")[0]
         else:
             server = server_part
-        user = "vseekerdb"
-        password = "TalixNetworkAssessments!@#$%"
+        server_short_name = server.split(".")[0] if server else ""
+        user = f"vseekerdb@{server_short_name}"
+        password = "TalixNetworkAssessments!@#$#"
         database = conn_parts.get("Initial Catalog")
         return pymssql.connect(
             server=server, user=user, password=password, database=database
