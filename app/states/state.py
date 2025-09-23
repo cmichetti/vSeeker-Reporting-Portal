@@ -20,10 +20,16 @@ class State(rx.State):
             if "=" in part:
                 key, value = part.split("=", 1)
                 conn_parts[key.strip()] = value.strip()
-        server = "vseeker.database.windows.net"
-        user = conn_parts.get("User ID") or conn_parts.get("user")
-        password = conn_parts.get("Password") or conn_parts.get("password")
-        database = conn_parts.get("Initial Catalog") or conn_parts.get("database")
+        server_part = conn_parts.get("Server")
+        if server_part and server_part.startswith("tcp:"):
+            server_part = server_part[4:]
+        if server_part and "," in server_part:
+            server = server_part.split(",")[0]
+        else:
+            server = server_part
+        user = conn_parts.get("User ID")
+        password = conn_parts.get("Password")
+        database = conn_parts.get("Initial Catalog")
         return pymssql.connect(
             server=server, user=user, password=password, database=database
         )
