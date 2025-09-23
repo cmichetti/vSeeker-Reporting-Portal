@@ -691,7 +691,7 @@ def scan_results_list() -> rx.Component:
             rx.foreach(
                 State.scan_data,
                 lambda result: rx.cond(
-                    State.scan_data.length() > 1,
+                    State.scan_data.length() > 0,
                     rx.el.li(
                         rx.el.span(
                             result["hostname"],
@@ -720,10 +720,6 @@ def scan_results_list() -> rx.Component:
                         rx.foreach(
                             result.items(),
                             lambda item: rx.cond(
-                                result["hostname"],
-                            " (",
-                            result["ipaddress"],
-                            ")",
                                 item[0] != "id",
                                 result_item_with_description(item),
                                 rx.fragment(),
