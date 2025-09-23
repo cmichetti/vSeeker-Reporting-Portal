@@ -696,7 +696,7 @@ def scan_results_list() -> rx.Component:
                         rx.el.span(
                             result["hostname"],
                             " (",
-                            result[re.match("^([^\s]*)\s.*$","ipaddress")],
+                            result["ipaddress"],
                             ")",
                             class_name="text-xl font-semibold text-gray-700",
                         ),
