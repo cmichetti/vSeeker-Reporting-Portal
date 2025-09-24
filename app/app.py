@@ -774,7 +774,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_scan_date,
                     on_change=State.on_scan_date_change,
-                    class_name="p-2 border rounded-md bg-white",
+                    class_name="p-2 border-none rounded-md bg-white",
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
