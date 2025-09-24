@@ -731,9 +731,9 @@ def scan_results_list() -> rx.Component:
                     ),
                 ),
             ),
-            class_name="w-full max-w-4xl list-none p-0",
+            class_name="w-full list-none p-0",
         ),
-        class_name="w-full flex flex-col items-center mt-8",
+        class_name="w-full items-center mt-8",
     )
 
 
