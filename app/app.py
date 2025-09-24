@@ -707,7 +707,8 @@ def scan_results_list() -> rx.Component:
                                     (item[0] != "id")
                                     & (item[0] != "hostname")
                                     & (item[0] != "company")
-                                    & (item[0] != "ipaddress"),
+                                    & (item[0] != "ipaddress")
+                                    & (item[0].value != "-1"),
                                     result_item_with_description(item),
                                     rx.fragment(),
                                 ),
