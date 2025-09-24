@@ -713,7 +713,7 @@ def scan_results_list() -> rx.Component:
                                     rx.fragment(),
                                 ),
                             ),
-                            class_name="list-none mt-2 mb-4 overflow-hidden",
+                            class_name="list-none",
                         ),
                         class_name="mb-6",
                     ),
@@ -731,9 +731,9 @@ def scan_results_list() -> rx.Component:
                     ),
                 ),
             ),
-            class_name="max-w-4xl list-none",
+            class_name="list-none",
         ),
-        class_name="flex flex-col items-center mt-8",
+        class_name="items-center",
     )
 
 
