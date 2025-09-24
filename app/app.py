@@ -753,7 +753,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_company,
                     on_change=State.on_company_change,
-                    class_name="p-2 rounded-md bg-white",
+                    class_name="bg-white",
                 ),
                 rx.el.select(
                     rx.el.option("Select Hostname", value="", disabled=True),
@@ -763,7 +763,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_hostname,
                     on_change=State.on_hostname_change,
-                    class_name="rounded-md bg-white",
+                    class_name="bg-white",
                     is_disabled=~State.selected_company.to(bool),
                 ),
                 rx.el.select(
@@ -774,7 +774,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_scan_date,
                     on_change=State.on_scan_date_change,
-                    class_name="rounded-md bg-white",
+                    class_name="bg-white",
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
