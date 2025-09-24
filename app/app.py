@@ -38,7 +38,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - Windows is not fully patched with Windows Updates.",
                             class_name="font-normal",
@@ -58,7 +58,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - The Windows Firewall is not fully enabled.",
                             class_name="font-normal",
@@ -78,7 +78,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - There is no Talix/Microsoft-recognized Anti-Virus installed.",
                             class_name="font-normal",
@@ -98,7 +98,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - There are file shares with Everyone access granted.",
                             class_name="font-normal",
@@ -138,7 +138,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - The Print Spooler service is enabled and should be disabled if possible.",
                             class_name="font-normal",
@@ -155,7 +155,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         rx.el.span(" - SMBv1 is disabled.", class_name="font-normal"),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - SMBv1 is enabled and should be disabled, as it is a vulnerable file transfer protocol.",
                             class_name="font-normal",
@@ -172,7 +172,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         rx.el.span(" - NetBIOS is disabled.", class_name="font-normal"),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - NetBIOS is enabled and should be disabled, as it is an extremely vulnerable network protocol.",
                             class_name="font-normal",
@@ -191,7 +191,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - LMHosts Lookup is enabled and should be disabled.",
                             class_name="font-normal",
@@ -210,7 +210,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - TLS v1.0 is enabled and should be disabled, as it is a vulnerable network protocol.",
                             class_name="font-normal",
@@ -229,7 +229,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - TLS v1.1 is enabled and should be disabled, as it is a vulnerable network protocol.",
                             class_name="font-normal",
@@ -246,7 +246,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         rx.el.span(" - LLMNR is disabled.", class_name="font-normal"),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - LLMNR is enabled and should be disabled, as it is a vulnerable to man in the middle attacks.",
                             class_name="font-normal",
@@ -265,7 +265,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - NTLMv1 is not fully disabled, and should be as it is a vulnerable network authentication protocol.",
                             class_name="font-normal",
@@ -323,7 +323,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - SMBv2 Signing is not fully enabled, and should be to help protect against file interception.",
                             class_name="font-normal",
@@ -343,7 +343,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - Anonymous SID translation is not fully disabled.",
                             class_name="font-normal",
@@ -363,7 +363,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - UAC needs to be enabled to protect elevation requests with a password requirement.",
                             class_name="font-normal",
@@ -383,7 +383,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - Browser password saving should be disabled to protect user passwords from being easily obtained.",
                             class_name="font-normal",
@@ -400,7 +400,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         rx.el.span(" - IPv6 is disabled.", class_name="font-normal"),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - IPv6 networking protocol should be disabled if not needed/used.",
                             class_name="font-normal",
@@ -436,7 +436,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - SMBv3 Encryption should be enabled if possible to provide the best file protection possible on the network.",
                             class_name="font-normal",
@@ -555,7 +555,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - The Event Viewer Audit Policy is not configured correctly to gather all events.",
                             class_name="font-normal",
@@ -635,7 +635,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - The Local Admin account should be restricted from logging on remotely.",
                             class_name="font-normal",
@@ -655,7 +655,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - The Remote Registry service is not disabled (this is OK on Domain Controllers).",
                             class_name="font-normal",
@@ -674,7 +674,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
                         rx.el.span(
                             " - BitLocker is not enabled.", class_name="font-normal"
                         ),
