@@ -15,13 +15,13 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                     | value.contains("2003")
                     | value.contains("2000"),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
-                        rx.el.span(" - Operating System: ", class_name="font-normal"),
-                        rx.el.span(value, class_name="font-semibold text-red-300"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
+                        rx.el.span(" - Operating System: ", class_name="font-normal border-none"),
+                        rx.el.span(value, class_name="font-semibold text-red-300 border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("* - Operating System: ", class_name="font-normal"),
-                        rx.el.span(value, class_name="font-semibold"),
+                        rx.el.span("* - Operating System: ", class_name="font-normal border-none"),
+                        rx.el.span(value, class_name="font-semibold border-none"),
                     ),
                 ),
                 rx.fragment(),
@@ -31,17 +31,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - Windows is fully patched with Windows Updates.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - Windows is not fully patched with Windows Updates.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -51,17 +51,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The Windows Firewall is fully enabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The Windows Firewall is not fully enabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -71,17 +71,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - There is a Talix/Microsoft-recognized Anti-Virus installed.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - There is no Talix/Microsoft-recognized Anti-Virus installed.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -91,17 +91,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - There are no file shares with Everyone access granted.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - There are file shares with Everyone access granted.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -111,17 +111,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - All drives have over 10% free space.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - There are some drives with less than 10% free space!",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -131,17 +131,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "0",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The Print Spooler service is disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The Print Spooler service is enabled and should be disabled if possible.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -151,14 +151,14 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                        rx.el.span(" - SMBv1 is disabled.", class_name="font-normal"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                        rx.el.span(" - SMBv1 is disabled.", class_name="font-normal border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - SMBv1 is enabled and should be disabled, as it is a vulnerable file transfer protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -168,14 +168,14 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                        rx.el.span(" - NetBIOS is disabled.", class_name="font-normal"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                        rx.el.span(" - NetBIOS is disabled.", class_name="font-normal border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - NetBIOS is enabled and should be disabled, as it is an extremely vulnerable network protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -185,16 +185,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - LMHosts Lookup is disabled.", class_name="font-normal"
+                            " - LMHosts Lookup is disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - LMHosts Lookup is enabled and should be disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -204,16 +204,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - TLS v1.0 is disabled.", class_name="font-normal"
+                            " - TLS v1.0 is disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - TLS v1.0 is enabled and should be disabled, as it is a vulnerable network protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -223,16 +223,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - TLS v1.1 is disabled.", class_name="font-normal"
+                            " - TLS v1.1 is disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - TLS v1.1 is enabled and should be disabled, as it is a vulnerable network protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -242,14 +242,14 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                        rx.el.span(" - LLMNR is disabled.", class_name="font-normal"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                        rx.el.span(" - LLMNR is disabled.", class_name="font-normal border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - LLMNR is enabled and should be disabled, as it is a vulnerable to man in the middle attacks.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -259,16 +259,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "5",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - NTLMv1 is fully disabled.", class_name="font-normal"
+                            " - NTLMv1 is fully disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - NTLMv1 is not fully disabled, and should be as it is a vulnerable network authentication protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -278,16 +278,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - AutoRun is fully disabled.", class_name="font-normal"
+                            " - AutoRun is fully disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - AutoRun is enabled and should be turned off to prevent automatically running software from mounted drives.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -297,16 +297,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - wDigest is fully disabled.", class_name="font-normal"
+                            " - wDigest is fully disabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - wDigest is enabled and should be as it is a vulnerable authentication protocol.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -316,17 +316,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - SMBv2 Signing is fully enabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - SMBv2 Signing is not fully enabled, and should be to help protect against file interception.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -336,17 +336,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - Anonymous SID translation is fully disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - Anonymous SID translation is not fully disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -356,17 +356,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - UAC is enabled to prevent elevation with a password requirement.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - UAC needs to be enabled to protect elevation requests with a password requirement.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -376,17 +376,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - Browser password saving is disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - Browser password saving should be disabled to protect user passwords from being easily obtained.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -396,14 +396,14 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                        rx.el.span(" - IPv6 is disabled.", class_name="font-normal"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                        rx.el.span(" - IPv6 is disabled.", class_name="font-normal border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - IPv6 networking protocol should be disabled if not needed/used.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -413,14 +413,14 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
-                        rx.el.span(" - WinRM is disabled.", class_name="font-normal"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                        rx.el.span(" - WinRM is disabled.", class_name="font-normal border-none"),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - WinRM should be disabled if not needed/used, as it provides an attacker connectivity across the network.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -430,16 +430,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - SMBv3 Encryption is enabled.", class_name="font-normal"
+                            " - SMBv3 Encryption is enabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - SMBv3 Encryption should be enabled if possible to provide the best file protection possible on the network.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -449,17 +449,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - LSA Protection is fully enabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - LSA Protection should be enabled to protect against malicious apps being able to execute.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -469,17 +469,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "0",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - Information about the previous user account that logged in is hidden.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - Information about the previous user account that logged in should be hidden.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -489,16 +489,16 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - LDAP Signing is enabled.", class_name="font-normal"
+                            " - LDAP Signing is enabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - LDAP Signing should be enabled to secure the use of LDAP on the domain.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -508,17 +508,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - LDAP Channel Binding is enabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - LDAP Channel Binding should be enabled to secure the use of LDAP on the domain.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -528,17 +528,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - Windows Credential Manager is disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - Windows Credential Manager should be disabled, as passwords should not be stored on the server.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none border-none",
                         ),
                     ),
                 ),
@@ -548,17 +548,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The Event Viewer Audit Policy is correctly configured.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The Event Viewer Audit Policy is not configured correctly to gather all events.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -568,17 +568,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "0",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The DHCP server has leased out less than 80% of its IP available addresses.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The DHCP server has leased out more than 80% of its available IP addresses.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -588,17 +588,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "0",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The default IIS pages have been removed.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The default IIS pages should be removed from the web server.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -608,17 +608,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "0",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The cached logon count on the domain is set to 4 or less.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("!", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("!", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The cached logon count on the domain should be set to 4 logins or less.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -628,17 +628,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The Local Admin account cannot be used to log on remotely.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The Local Admin account should be restricted from logging on remotely.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -648,17 +648,17 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
                             " - The Remote Registry service is disabled.",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
                             " - The Remote Registry service is not disabled (this is OK on Domain Controllers).",
-                            class_name="font-normal",
+                            class_name="font-normal border-none",
                         ),
                     ),
                 ),
@@ -668,15 +668,15 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     value == "1",
                     rx.el.div(
-                        rx.el.span("√", class_name="font-bold bg-none text-green-500"),
+                        rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
                         rx.el.span(
-                            " - BitLocker is enabled.", class_name="font-normal"
+                            " - BitLocker is enabled.", class_name="font-normal border-none"
                         ),
                     ),
                     rx.el.div(
-                        rx.el.span("X", class_name="font-bold bg-none text-red-500"),
+                        rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
                         rx.el.span(
-                            " - BitLocker is not enabled.", class_name="font-normal"
+                            " - BitLocker is not enabled.", class_name="font-normal border-none"
                         ),
                     ),
                 ),
@@ -698,7 +698,7 @@ def scan_results_list() -> rx.Component:
                             " (",
                             result["ipaddress"],
                             ")",
-                            class_name="text-xl font-semibold text-gray-700",
+                            class_name="text-xl font-semibold text-gray-700 border-none",
                         ),
                         rx.el.ul(
                             rx.foreach(
@@ -713,9 +713,9 @@ def scan_results_list() -> rx.Component:
                                     rx.fragment(),
                                 ),
                             ),
-                            class_name="list-none",
+                            class_name="list-none border-none",
                         ),
-                        class_name="mb-6",
+                        class_name="mb-6 border-none",
                     ),
                     rx.el.ul(
                         rx.foreach(
@@ -727,13 +727,13 @@ def scan_results_list() -> rx.Component:
                                 rx.fragment(),
                             ),
                         ),
-                        class_name="list-none",
+                        class_name="list-none border-none",
                     ),
                 ),
             ),
-            class_name="list-none",
+            class_name="list-none border-none",
         ),
-        class_name="items-center",
+        class_name="items-center border-none",
     )
 
 
@@ -742,7 +742,7 @@ def index() -> rx.Component:
         rx.el.div(
             rx.el.h1(
                 "vSeeker Reporting Portal",
-                class_name="text-4xl font-bold text-gray-800 mb-6",
+                class_name="text-4xl font-bold text-gray-800 mb-6 border-none",
             ),
             rx.el.div(
                 rx.el.select(
@@ -753,7 +753,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_company,
                     on_change=State.on_company_change,
-                    class_name="bg-white",
+                    class_name="bg-white border-none",
                 ),
                 rx.el.select(
                     rx.el.option("Select Hostname", value="", disabled=True),
@@ -763,7 +763,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_hostname,
                     on_change=State.on_hostname_change,
-                    class_name="bg-white",
+                    class_name="bg-white border-none",
                     is_disabled=~State.selected_company.to(bool),
                 ),
                 rx.el.select(
@@ -774,16 +774,16 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_scan_date,
                     on_change=State.on_scan_date_change,
-                    class_name="bg-white",
+                    class_name="bg-white border-none",
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
-                class_name="space-x-4 mb-8",
+                class_name="space-x-4 mb-8 border-none",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
-            class_name="items-center",
+            class_name="items-center border-none",
         ),
-        class_name="font-['Arial'] bg-white min-h-screen",
+        class_name="font-['Arial'] bg-white min-h-screen border-none",
     )
 
 
