@@ -778,10 +778,10 @@ def index() -> rx.Component:
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
-                class_name="flex flex-row space-x-4 mb-8",
+                class_name="space-x-4 mb-8",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
-            class_name="w-full flex flex-col items-center pt-10 px-4",
+            class_name="w-full items-center pt-10 px-4",
         ),
         class_name="font-['Arial'] bg-white min-h-screen",
     )
