@@ -715,7 +715,7 @@ def scan_results_list() -> rx.Component:
                             ),
                             class_name="list-none border-none",
                         ),
-                        class_name="mb-6 border-none",
+                        class_name="border-none",
                     ),
                     rx.el.ul(
                         rx.foreach(
@@ -778,7 +778,7 @@ def index() -> rx.Component:
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
-                class_name="border-none",
+                class_name="space-x-4 mb-8 border-none",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
             class_name="items-center border-none",
