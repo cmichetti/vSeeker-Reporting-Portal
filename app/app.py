@@ -788,7 +788,7 @@ def index() -> rx.Component:
 
 
 app = rx.App(
-    theme=rx.theme(appearance="light"),
+    theme=rx.theme(appearance="light", panel_background="translucent"),
     head_components=[
         rx.el.link(rel="preconnect", href="https://fonts.googleapis.com"),
         rx.el.link(rel="preconnect", href="https://fonts.gstatic.com", cross_origin=""),
