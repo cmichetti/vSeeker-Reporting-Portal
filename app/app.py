@@ -742,7 +742,7 @@ def index() -> rx.Component:
         rx.el.div(
             rx.el.h1(
                 "vSeeker Reporting Portal",
-                class_name="text-4xl font-bold text-gray-800 mb-6 border-none",
+                class_name="font-bold text-gray-800 border-none",
             ),
             rx.el.div(
                 rx.el.select(
