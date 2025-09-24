@@ -783,7 +783,7 @@ def index() -> rx.Component:
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
             class_name="items-center border-none",
         ),
-        class_name="font-['Arial'] bg-white min-h-screen border-none",
+        class_name="font-['Arial'] bg-white border-none",
     )
 
 
