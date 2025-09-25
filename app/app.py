@@ -750,7 +750,7 @@ def scan_results_list() -> rx.Component:
                                 (item[0] != "id")
                                 & (item[1] != "-1"),  # Ignore items that have -1 value in the db
                                 result_item_with_description(item),
-                                rx.fragment(),
+                                None,
                             ),
                         ),
                         class_name="border-none",
