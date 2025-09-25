@@ -715,8 +715,8 @@ def scan_results_list() -> rx.Component:
                                 & (item[0] != "hostname")
                                 & (item[0] != "company")
                                 & (item[0] != "ipaddress")
-                                & (item[1] != "-1")
-                                & (item[1] != None),  # Ignore items that have -1 value in the db
+                                & (item[1] != "-1") # Ignore items that have -1 value in the db
+                                & (item[1] is not None),  
                                 rx.el.ul(result_item_with_description(item)),
                                 rx.fragment(),
                             ),
