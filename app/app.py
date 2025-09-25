@@ -742,7 +742,7 @@ def index() -> rx.Component:
         rx.el.div(
             rx.el.h1(
                 "vSeeker Reporting Portal",
-                class_name="text-xl font-bold text-gray-800 border-1",
+                class_name="text-xl font-bold text-gray-800 border rounded",
             ),
             rx.el.div(
                 rx.el.select(
@@ -753,7 +753,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_company,
                     on_change=State.on_company_change,
-                    class_name="bg-white border-none",
+                    class_name="bg-white border rounded",
                 ),
                 rx.el.select(
                     rx.el.option("Select Hostname", value="", disabled=True),
@@ -763,7 +763,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_hostname,
                     on_change=State.on_hostname_change,
-                    class_name="bg-white border-none",
+                    class_name="bg-white border rounded",
                     is_disabled=~State.selected_company.to(bool),
                 ),
                 rx.el.select(
@@ -774,7 +774,7 @@ def index() -> rx.Component:
                     ),
                     value=State.selected_scan_date,
                     on_change=State.on_scan_date_change,
-                    class_name="bg-white border-none",
+                    class_name="bg-white border rounded",
                     is_disabled=~State.selected_hostname.to(bool)
                     | (State.selected_hostname == "All Servers"),
                 ),
