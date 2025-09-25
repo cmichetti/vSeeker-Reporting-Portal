@@ -713,7 +713,7 @@ def scan_results_list() -> rx.Component:
                                     rx.fragment(),
                                 ),
                             ),
-                            class_name="border-none",
+                            class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
                         ),
                         class_name="border-none",
                     ),
