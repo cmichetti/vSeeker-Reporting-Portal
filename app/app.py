@@ -684,6 +684,12 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
         ), 
     )
 
+# Filter the list ahead of the foreach loop
+@rx.cached_property
+def filtered_items(self) -> list[str]:
+    # Filter out the items we don't want in the list for each server
+    return [item for item in self.items if (item[0] == "id" | item[0] == "hostname" | item[0] == "company" | item[0] == "ipaddress" | item[1] == "-1")]
+
 
 def scan_results_list() -> rx.Component:
     return rx.el.div(
@@ -700,9 +706,10 @@ def scan_results_list() -> rx.Component:
                             ")",
                             class_name="text-xl font-semibold text-gray-700 border-none",
                         ),
+                                                
                         rx.el.ul(
                             rx.foreach(
-                                result.items(),
+                                result.filtered_items(),
                                 lambda item: rx.cond(
                                     (item[0] != "id")
                                     & (item[0] != "hostname")
@@ -710,7 +717,7 @@ def scan_results_list() -> rx.Component:
                                     & (item[0] != "ipaddress")
                                     & (item[1] != "-1"),  # Ignore items that have -1 value in the db
                                     result_item_with_description(item),
-                                    None,
+                                    rx.fragment(),
                                 ),
                             ),
                             class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
