@@ -781,7 +781,7 @@ def index() -> rx.Component:
                 class_name="border-none",
             ),
             rx.cond(State.scan_data, scan_results_list(), rx.el.div()),
-            class_name="border-none",
+            class_name="w-full flex flex-col items-center pt-10 px-4 border-none",
         ),
         class_name="font-['Arial'] text-11 bg-white border-none",
     )
