@@ -707,7 +707,6 @@ def scan_results_list() -> rx.Component:
                             class_name="text-xl font-semibold text-gray-700 border-none",
                         ),
 
-                        rx.el.ul(
                             rx.foreach(
                                 # result.items(),
                                 result.items(),
@@ -717,14 +716,28 @@ def scan_results_list() -> rx.Component:
                                     & (item[0] != "company")
                                     & (item[0] != "ipaddress")
                                     & (item[1] != "-1"),  # Ignore items that have -1 value in the db
-                                    result_item_with_description(item),
-                                    rx.empty(),
+                                    rx.el.ul(result_item_with_description(item)),
+                                    rx.fragment(),
                                 ),
-                            ),
-                            class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
-                        ),
+                            ), class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
+                            
                                                 
-
+#                        rx.el.ul(
+#                            rx.foreach(
+#                                # result.items(),
+#                                result.items(),
+#                                lambda item: rx.cond(
+#                                    (item[0] != "id")
+#                                    & (item[0] != "hostname")
+#                                    & (item[0] != "company")
+#                                    & (item[0] != "ipaddress")
+#                                    & (item[1] != "-1"),  # Ignore items that have -1 value in the db
+#                                    result_item_with_description(item),
+#                                    rx.fragment(),
+#                                ),
+#                            ),
+#                            class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
+#                        ),
                         class_name="border-none",
                     ),
                     rx.el.ul(
