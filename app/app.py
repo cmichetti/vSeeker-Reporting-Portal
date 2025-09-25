@@ -685,7 +685,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     )
 
 # Filter the list ahead of the foreach loop
-@rx.cached_property
+# @rx.cached_property
 def filtered_items(self) -> list[str]:
     # Filter out the items we don't want in the list for each server
     return [item for item in self.items if (item[0] == "id" | item[0] == "hostname" | item[0] == "company" | item[0] == "ipaddress" | item[1] == "-1")]
