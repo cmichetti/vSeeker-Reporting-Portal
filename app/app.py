@@ -683,7 +683,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             ), class_name="font-normal border-none"
         ), 
         rx.cond(
-                value == "-1",
+                value is None,
                 None,
                 None,
             ),
