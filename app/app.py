@@ -30,6 +30,37 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                     None,
                 ),
                 rx.cond(
+                    key == "virtual",
+                    rx.cond(
+                        value == "1",
+                        rx.el.div(
+                            rx.el.span(
+                                "*- Server is a Virtual Machine.",
+                                class_name="font-normal border-none",
+                            ),
+                        ),
+                        rx.el.div(
+                            rx.el.span(
+                                " - Server is not a Virtual Machine.",
+                                class_name="font-normal border-none",
+                            ),
+                        ),
+                    ),
+                ),
+                rx.cond(
+                    key == "serialnumber",
+                    rx.cond(
+                        value is not None,
+                        rx.el.div(
+                            rx.el.span(
+                                "*- Serial Number: ", value, 
+                                class_name="font-normal border-none",
+                            ),
+                        ),
+                        None,
+                    ),
+                ),
+                rx.cond(
                     key == "windowsfullypatched",
                     rx.cond(
                         value == "1",
