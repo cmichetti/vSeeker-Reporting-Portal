@@ -709,7 +709,8 @@ def scan_results_list() -> rx.Component:
                                                 
                         rx.el.ul(
                             rx.foreach(
-                                result.items(),
+                                # result.items(),
+                                filtered_items(result.items),
                                 lambda item: rx.cond(
                                     (item[0] != "id")
                                     & (item[0] != "hostname")
