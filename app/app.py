@@ -7,13 +7,9 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     value = item[1]
     return (
         rx.cond(
-            (key == "id")
-            | (key == "hostname")
-            | (key == "company")
-            | (key == "ipaddress")
-            | (key == "scandate")
-            | (key == "-1"), # Ignore items that have -1 value in the db
-            None,
+            (key == "id") | (key == "hostname") | (key == "company") | 
+            (key == "ipaddress") | (key == "scandate") | (key == "-1"), # Ignore items that have -1 value in the db
+            rx.fragment(),
             rx.el.li(
                 rx.cond(
                     key == "os",
