@@ -751,13 +751,14 @@ def scan_results_list() -> rx.Component:
                             # result.items(),
                             result.items(),
                             lambda item: rx.cond(
-                                (item[0] != "id")
-                                | (item[0] != "hostname")
-                                | (item[0] != "company")
-                                | (item[0] != "ipaddress")
-                                | (item[0] != "scandate")
-                                | (item[1] != "-1"), # Ignore items that have -1 value in the db
-                                rx.el.ul(result_item_with_description(item)),
+                                #(item[0] != "id")
+                                #| (item[0] != "hostname")
+                                #| (item[0] != "company")
+                                #| (item[0] != "ipaddress")
+                                #| (item[0] != "scandate")
+                                #| (item[1] != "-1"), # Ignore items that have -1 value in the db
+                                #rx.el.ul(result_item_with_description(item)),
+                                result_item_with_description(item),
                                 None,
                             ),
                         ), class_name="list-none p-0 mt-2 mb-4 border-none rounded-md shadow-sm",
