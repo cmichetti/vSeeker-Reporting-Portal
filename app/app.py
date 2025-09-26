@@ -755,7 +755,7 @@ def scan_results_list() -> rx.Component:
                                 rx.el.ul(result_item_with_description(item)),
                                 None,
                             ),
-                        ), class_name="list-none p-0 mt-2 mb-4 border-none rounded-md overflow-hidden shadow-sm",
+                        ), class_name="list-none p-0 mt-2 mb-4 border-none rounded-md shadow-sm",
                                               
 #                        rx.el.ul(
 #                            rx.foreach(
