@@ -7,7 +7,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
     value = item[1]
     return (
         rx.cond(
-            value == "",
+            value is None,
             None,
             rx.el.li(
                 rx.cond(
