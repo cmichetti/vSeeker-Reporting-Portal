@@ -41,7 +41,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         ),
                         rx.el.div(
                             rx.el.span(
-                                " - Server is not a Virtual Machine.",
+                                "* - Server is not a Virtual Machine.",
                                 class_name="font-normal border-none",
                             ),
                         ),
@@ -50,10 +50,10 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                 rx.cond(
                     key == "serialnumber",
                     rx.cond(
-                        value is not None,
+                        value != None,
                         rx.el.div(
                             rx.el.span(
-                                "*- Serial Number: ", value, 
+                                "* - Serial Number: ", value, 
                                 class_name="font-normal border-none",
                             ),
                         ),
