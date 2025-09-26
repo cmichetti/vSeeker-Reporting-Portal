@@ -714,11 +714,6 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                             ),
                         ),
                     ),
-                ), 
-                rx.cond(
-                    key,
-                    None,
-                    None,
                 ), class_name="font-normal border-none"
             ),
         ), 
@@ -756,7 +751,7 @@ def scan_results_list() -> rx.Component:
                                 & (item[0] != "company")
                                 & (item[0] != "ipaddress")
                                 & (item[1] != "-1") # Ignore items that have -1 value in the db
-                                & (item[1] != "NULL"),  
+                                & (item[1]),  
                                 rx.el.ul(result_item_with_description(item)),
                                 None,
                             ),
