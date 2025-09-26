@@ -714,6 +714,11 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                             ),
                         ),
                     ),
+                ), 
+                rx.cond(
+                    key == None,
+                    None,
+                    None,
                 ), class_name="font-normal border-none"
             ),
         ), 
