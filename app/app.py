@@ -35,7 +35,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                         value == "1",
                         rx.el.div(
                             rx.el.span(
-                                "*- Server is a Virtual Machine.",
+                                "* - Server is a Virtual Machine.",
                                 class_name="font-normal border-none",
                             ),
                         ),
