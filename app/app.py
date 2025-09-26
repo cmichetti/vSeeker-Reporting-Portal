@@ -12,8 +12,7 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
             & (item[0] != "company")
             & (item[0] != "ipaddress")
             & (item[0] != "scandate")
-            & (item[1] != "-1") # Ignore items that have -1 value in the db
-            & (item[1]),  
+            & (item[1] != "-1"), # Ignore items that have -1 value in the db
             None,
             rx.el.li(
                 rx.cond(
