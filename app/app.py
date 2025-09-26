@@ -699,6 +699,26 @@ def result_item_with_description(item: rx.Var[tuple[str, str]]) -> rx.Component:
                     ),
                 ),
                 rx.cond(
+                    key == "guestEnabled",
+                    rx.cond(
+                        value == "0",
+                        rx.el.div(
+                            rx.el.span("√", class_name="font-bold bg-none text-green-500 border-none"),
+                            rx.el.span(
+                                " - The Guest account is disabled.",
+                                class_name="font-normal border-none",
+                            ),
+                        ),
+                        rx.el.div(
+                            rx.el.span("X", class_name="font-bold bg-none text-red-500 border-none"),
+                            rx.el.span(
+                                " - The Guest account is not disabled.",
+                                class_name="font-normal border-none",
+                            ),
+                        ),
+                    ),
+                ),
+                rx.cond(
                     key == "BitLockerEnabled",
                     rx.cond(
                         value == "1",
