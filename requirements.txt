@@ -2,3 +2,5 @@
 reflex==0.8.11
 pyodbc
 pymssql
+uvicorn
+gunicorn
