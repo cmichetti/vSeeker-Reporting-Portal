@@ -70,4 +70,5 @@ jobs:
         with:
           app-name: 'vseeker-frontend'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           
